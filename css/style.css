@@ -1,0 +1,32 @@
+body {
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
+
+#banner img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+#cast img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  color: #343a40;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  margin-left: 15px;
+  color: #343a40;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff;
+}

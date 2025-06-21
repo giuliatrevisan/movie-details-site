@@ -1,84 +1,208 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Spec Page</title>
 
     <!-- Bootstrap 4 -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <!-- Seu CSS -->
     <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <main class="container py-4">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <!-- Logo -->
-    <a class="navbar-brand font-weight-bold" href="#">PlayCube</a>
+</head>
 
-    <!-- Botão mobile (hamburger) -->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<body>
+    <main>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(16, 44, 87, 1); width: 100%;">
+            <div class="container-fluid px-5"> <!-- substituí padding manual por utilitários Bootstrap -->
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="assets/logo-clara.png" alt="PlayCube" style="height: 40px;">
+                </a>
 
-    <!-- Links -->
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Filmes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Séries</a>
-        </li>
-      </ul>
+                <!-- Botão mobile (toggle) ao lado oposto da logo no mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menu de navegação colapsável -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav" style="gap: 40px;">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Filmes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Séries</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+     <section id="info" class="custom-padding" role="region" aria-labelledby="info-title">
+  <div class="info-content d-flex" role="group" aria-label="Informações sobre o filme">
+    <figure class="info-image" style="min-width: 150px;">
+      <img src="#" alt="Capa do filme" class="img-fluid" loading="lazy" />
+      <figcaption class="sr-only">Capa do filme</figcaption>
+    </figure>
+
+    <div class="info-text" role="group" aria-labelledby="info-title">
+      <h2 id="info-title" class="font-weight-bold">Título do Filme (Ano)</h2>
+      <p><strong>Gênero:</strong> <span aria-label="Gênero do filme">Aventura, Drama</span></p>
+      <p><strong>Sinopse:</strong><br /><span>Texto da sinopse...</span></p>
+
+      <div class="info-details-container d-flex flex-wrap" role="list">
+        <article class="info-block" role="listitem">
+          <p><strong>Dirigido por:</strong><br />Nome do Diretor</p>
+        </article>
+        <article class="info-block" role="listitem">
+          <p><strong>Escrito por:</strong><br />Nome dos Roteiristas</p>
+        </article>
+        <article class="info-block" role="listitem">
+          <p><strong>Situação:</strong><br />Lançado</p>
+        </article>
+        <article class="info-block" role="listitem">
+          <p><strong>Idioma:</strong><br />EN</p>
+        </article>
+        <article class="info-block" role="listitem">
+          <p><strong>Orçamento:</strong><br />$100.000.000</p>
+        </article>
+        <article class="info-block" role="listitem">
+          <p><strong>Receita:</strong><br />$500.000.000</p>
+        </article>
+      </div>
     </div>
   </div>
-</nav>
-
-      <header class="my-4">
-  <h1 class="text-center">Movie Info</h1>
-</header>
-
-<section id="banner" class="mb-4">
-  <!-- Aqui vai a imagem do pôster -->
 </section>
 
-<section id="info" class="mb-4">
-  <!-- Título, nota, duração, gêneros, sinopse -->
-</section>
 
-<section id="cast" class="mb-4">
-  <h2>Elenco</h2>
-  <div class="row" id="cast-list">
-    <!-- Cards dos atores -->
+        <section id="cast" class="custom-padding" style="background-color: #eadbc8; width: 100%;">
+            <div class="d-flex align-items-center mb-3" style="gap: 10px;">
+                <h2 class="m-0">Elenco</h2>
+                <button class="btn btn-custom-primary rounded-pill px-3 py-1">Ver mais</button>
+
+            </div>
+
+            <div class="cast-carousel-wrapper">
+                <div class="cast-carousel" id="cast-list">
+                    <!-- Os cards dos atores virão aqui -->
+                </div>
+            </div>
+        </section>
+
+        <section id="resenha" class="custom-padding">
+            <!-- Título e botão -->
+            <div class="d-flex align-items-center mb-3" style="gap: 10px;">
+                <h2 class="m-0">Resenha</h2>
+                <button class="btn btn-custom-primary rounded-pill px-3 py-1">Ver mais</button>
+            </div>
+
+            <!-- Container de resenhas -->
+            <div class="row g-3" id="reviews-container">
+                <!-- Resenhas inseridas aqui via JavaScript -->
+            </div>
+        </section>
+
+<section id="videos" class="custom-padding" aria-labelledby="midias-heading">
+  <h2 class="mb-4">Mídias</h2>
+
+  <!-- Vídeos -->
+  <div class="d-flex align-items-center mb-3" style="gap: 10px;">
+    <h3 class="m-0" id="videos-title">Vídeos</h3>
+    <button class="btn btn-custom-primary rounded-pill px-3 py-1">Ver mais</button>
+  </div>
+  <div class="media-scroll d-md-flex gap-3" id="video-list">
+    <!-- vídeos via JS -->
+  </div>
+
+  <!-- Pôsteres -->
+  <div class="d-flex align-items-center mt-4 mb-3" style="gap: 10px;">
+    <h3 class="m-0" id="posters-title">Posters</h3>
+    <button class="btn btn-custom-primary rounded-pill px-3 py-1">View More</button>
+  </div>
+  <div class="poster-carousel-wrapper">
+    <div class="media-scroll" id="poster-list">
+      <!-- pôsteres via JS -->
+    </div>
+  </div>
+
+  <!-- Backdrops -->
+  <div class="d-flex align-items-center mt-4 mb-3" style="gap: 10px;">
+    <h3 class="m-0" id="backdrops-title">Backdrops</h3>
+    <button class="btn btn-custom-primary rounded-pill px-3 py-1">View More</button>
+  </div>
+  <div class="backdrop-carousel-wrapper">
+    <div class="media-scroll" id="backdrop-list">
+      <!-- backdrops via JS -->
+    </div>
   </div>
 </section>
 
-<section id="videos" class="mb-4">
-  <h2>Trailers</h2>
-  <div class="row" id="video-list">
-    <!-- Thumbnails ou embeds de vídeos -->
-  </div>
-</section>
+        <section id="recomendados" class="custom-padding py-4"
+            style="background-color: rgba(16, 44, 87, 1); width: 100%;">
+            <h2 class="text-white mb-4">Recomendações</h2>
 
-<footer class="text-center py-3">
-  <p>&copy; 2025 - Movie Info by Giulia Trevisan</p>
+            <!-- Grid Desktop -->
+            <div class="row d-none d-lg-flex" id="recomendados-grid">
+                <!-- Filmes via JS -->
+            </div>
+
+            <!-- Scroll horizontal para Tablet e Mobile -->
+            <div class="recomendados-carousel-wrapper d-lg-none">
+                <div class="recomendados-carousel" id="recomendados-scroll">
+                    <!-- Filmes via JS -->
+                </div>
+            </div>
+        </section>
+<footer class="py-4">
+    <div class="container">
+        <div class="row">
+            <!-- Logo sempre em cima -->
+            <div class="col-12 mb-3">
+                <img src="assets/logo-escura.png" alt="Logo" style="height: 60px;" class="logo-footer">
+            </div>
+
+            <!-- Agrupamento das colunas de links -->
+            <div class="col-12">
+                <div class="row">
+                    <!-- Coluna 1 -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-3">
+                        <ul class="list-unstyled">
+                            <li><a href="#">Sobre</a></li>
+                            <li><a href="#">Contato</a></li>
+                            <li><a href="#">Suporte</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Coluna 2 -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-3">
+                        <ul class="list-unstyled">
+                            <li><a href="#">Adicione um filme</a></li>
+                            <li><a href="#">Adicione uma série</a></li>
+                            <li><a href="#">Discussões</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Coluna 3 -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-3">
+                        <ul class="list-unstyled">
+                            <li><a href="#">Termos de uso</a></li>
+                            <li><a href="#">Política de privacidade</a></li>
+                            <li><a href="#">Diretrizes</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
 
-    </main>
 
+
+    </main>
     <!-- Bootstrap JS + jQuery + Popper -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -86,5 +210,6 @@
 
     <!-- Seu JS -->
     <script src="js/main.js"></script>
-  </body>
+</body>
+
 </html>

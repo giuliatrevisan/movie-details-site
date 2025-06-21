@@ -1,6 +1,6 @@
 # 🎬 Movie Spec Page
 
-Uma página detalhada de um filme, com informações vindas da API do [TheMovieDB](https://www.themoviedb.org/). O projeto exibe sinopse, elenco, trailers, imagens promocionais, avaliações e filmes recomendados — tudo de forma responsiva e acessível.
+Uma página detalhada de um filme, com informações vindas da API do [TheMovieDB](https://www.themoviedb.org/). O projeto exibe sinopse, elenco, trailers, imagens promocionais, avaliações e filmes recomendados ( tudo de forma responsiva e acessível).
 
 > ⚠️ **Atenção:** Este projeto requer uma chave da API da TheMovieDB para funcionar. Veja a seção [🔑 API Key](#-api-key-importante).
 

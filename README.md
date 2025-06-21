@@ -57,7 +57,7 @@ Este projeto utiliza a API da [TheMovieDB](https://www.themoviedb.org/), e **voc
 Atenção: A chave original foi removida por segurança. O projeto não funcionará até que você insira a sua.
 📦 Como rodar o projeto
 Clone este repositório:
-git clone https://github.com/seu-usuario/movie-spec-page.git
+git clone https://github.com/giuliatrevisan/movie-details-site.git
 Acesse a pasta:
 cd movie-spec-page
 Abra o index.html no navegador (não é necessário servidor local):

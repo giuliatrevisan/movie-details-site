@@ -1,4 +1,4 @@
-const API_KEY = '';
+const API_KEY = 'SUA_CHAVE_AQUI';
 const MOVIE_ID = 11;
 const IMG_BASE = 'https://image.tmdb.org/t/p/w500';
 const BASE_URL = 'https://api.themoviedb.org/3';
@@ -6,8 +6,30 @@ function isMobile() {
   return window.innerWidth <= 767.98; 
 }
 
+function renderTutorial() {
+  const main = document.querySelector('main');
+  
+  main.innerHTML = `
+    <section class="p-5 text-center">
+      <h2>⚠️ Chave de API não encontrada</h2>
+      <p>Para usar este site, você precisa obter uma chave da <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">The Movie Database (TMDb)</a>.</p>
+      <ol class="text-left d-inline-block mt-4" style="max-width: 600px;">
+        <li>Crie uma conta em <a href="https://www.themoviedb.org/" target="_blank">TMDb.org</a></li>
+        <li>Vá em <strong>Configurações > API</strong> no seu perfil</li>
+        <li>Solicite uma chave de API para uso pessoal</li>
+        <li>Copie a chave e cole no seu arquivo <code>main.js</code> na constante <code>API_KEY</code></li>
+      </ol>
+      <p class="mt-3">Depois de configurar, recarregue a página.</p>
+    </section>
+  `;
+}
 
 async function loadMovieInfo() {
+  if (!API_KEY || API_KEY === 'SUA_CHAVE_AQUI') {
+    renderTutorial();
+    return;
+  }
+
   try {
     const resMovie = await fetch(`${BASE_URL}/movie/${MOVIE_ID}?api_key=${API_KEY}&language=pt-BR`);
     const movie = await resMovie.json();
@@ -218,7 +240,6 @@ async function loadImages() {
       backdropList.appendChild(img);
     });
 
-    // <<< CHAMADA IMPORTANTE para ativar o blur inicial dos carrosseis de posters e backdrops:
     updateBlurGeneric('.poster-carousel-wrapper', '#poster-list');
     updateBlurGeneric('.backdrop-carousel-wrapper', '#backdrop-list');
 
@@ -327,7 +348,6 @@ function updateBlurGeneric(wrapperSelector, carouselSelector) {
 
   if (!carousel || !wrapper) return;
 
-  // Só aplica blur no mobile
   if (!isMobile()) {
     wrapper.classList.remove('show-blur-left', 'show-blur-right');
     return;
@@ -335,7 +355,6 @@ function updateBlurGeneric(wrapperSelector, carouselSelector) {
 
   const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
   
-  // Só aplica blur se for rolável (mais de um item)
   if (maxScrollLeft <= 0) {
     wrapper.classList.remove('show-blur-left', 'show-blur-right');
     return;
